@@ -23,9 +23,29 @@ Retailers have to balance two costs: running out of stock and losing sales, or h
 ## Dashboard
 ![Dashboard](assets/dashboard.png)
 
+Live version: [Tableau Public]
+(https://public.tableau.com/views/RetailStockDemandandReplenishmentDashboard/RetailstockDemandReplenishmentDashboard?:language=en-GB&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
+
 
 ## Tech stack
-Python (pandas, NumPy, SciPy, Prophet, statsmodels, scikit-learn), Jupyter, Tableau Public
+
+**Data processing & analysis**
+- Python
+- pandas, NumPy - data cleaning, aggregation, per-SKU demand statistics
+- SciPy - Z-score calculation (norm.ppf) for safety stock
+
+**Forecasting**
+- Prophet - time series forecasting per SKU, captures weekly and yearly seasonality
+- scikit-learn - train/test evaluation utilities
+
+**Visualization**
+- Matplotlib, Seaborn - EDA plots, forecast vs. actual charts (in-notebook)
+- Tableau Public - final interactive dashboard
+
+**Tooling**
+- Jupyter Notebook - development environment
+- openpyxl - Excel export for Tableau data source
+- Git / GitHub - version control
 
 ## Repo structure
 - 01_eda.ipynb - data exploration and demand statistics
