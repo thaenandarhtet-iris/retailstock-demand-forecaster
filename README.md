@@ -1,24 +1,24 @@
 # RetailStock Demand Forecaster & Safety-Stock Planner
 
-Forecasts SKU-level retail demand and translates that forecast into concrete inventory decisions — safety stock levels and reorder points — using a real 5-year, 10-store, 50-item daily sales dataset.
+Forecasts SKU-level retail demand and turns that into real inventory decisions - safety stock levels and reorder points - using a real 5-year, 10-store, 50-item daily sales dataset.
 
 ## Problem
-Retailers need to balance two costs: running out of stock (lost sales) and holding too much stock (tied-up capital, storage costs). Getting this right requires knowing not just what demand looks like on average, but how uncertain that demand is — which drives how much safety buffer to hold. This project builds an end-to-end pipeline from raw sales data to a forecast, an uncertainty-aware inventory policy, and a dashboard an ops team could actually use.
+Retailers have to balance two costs: running out of stock and losing sales, or holding too much and tying up capital in storage. Getting this right means knowing not just what demand looks like on average, but how much it swings, since that's what actually determines how big a safety buffer you need. This project builds the full pipeline - raw sales data, a forecast, an inventory policy that accounts for uncertainty, and a dashboard an ops team could realistically use.
 
 ## Approach
-1. EDA — cleaned and explored 913K rows of daily sales across 10 stores x 50 items; extracted per-SKU demand statistics (mean, std dev)
-2. Forecasting — trained Facebook Prophet models per SKU (capturing weekly + yearly seasonality), evaluated on a held-out 90-day test window using MAPE and bias
-3. Inventory policy — computed safety stock (Z-score x demand std dev over lead time) and reorder points for all 500 SKUs, assuming a 7-day lead time and 95% service level
-4. Dashboard — built an interactive Tableau dashboard showing forecast accuracy and which SKUs are below their reorder point
+1. EDA - cleaned and explored 913K rows of daily sales across 10 stores and 50 items, pulled per-SKU demand stats (mean, std dev)
+2. Forecasting - trained Prophet models per SKU to capture weekly and yearly seasonality, evaluated on a held-out 90-day window using MAPE and bias
+3. Inventory policy - calculated safety stock (Z-score x demand std dev over lead time) and reorder points for all 500 SKUs, assuming a 7-day lead time and 95% service level
+4. Dashboard - built an interactive Tableau dashboard showing forecast accuracy and flagging which SKUs are below their reorder point
 
 ## Results
-| SKU | MAPE | Bias |
-|---|---|---|
-| Store 1, Item 1 | ~23% | — |
-| Store 5, Item 10 | ~12% | — |
-| Store 10, Item 25 | ~11% | — |
+| SKU | MAPE |
+|---|---|
+| Store 1, Item 1 | ~23% |
+| Store 5, Item 10 | ~12% |
+| Store 10, Item 25 | ~11.3% |
 
-(Replace with your actual numbers from forecast_metrics.csv)
+(pulled from the dashboard - check forecast_metrics.csv for exact numbers)
 
 ## Dashboard
 ![Dashboard](assets/dashboard.png)
@@ -28,13 +28,13 @@ Retailers need to balance two costs: running out of stock (lost sales) and holdi
 Python (pandas, NumPy, SciPy, Prophet, statsmodels, scikit-learn), Jupyter, Tableau Public
 
 ## Repo structure
-- 01_eda.ipynb — data exploration + demand statistics
-- 02_forecasting.ipynb — Prophet models + MAPE/bias evaluation
-- 03_safety_stock.ipynb — safety stock & reorder point calculations
-- 04_dashboard_export.ipynb — prepares data for Tableau
-- data/raw/ — source Kaggle dataset
-- data/processed/ — model outputs, dashboard-ready files
-- assets/ — dashboard screenshot
+- 01_eda.ipynb - data exploration and demand statistics
+- 02_forecasting.ipynb - Prophet models and MAPE/bias evaluation
+- 03_safety_stock.ipynb - safety stock and reorder point calculations
+- 04_dashboard_export.ipynb - preps data for Tableau
+- data/raw/ - source Kaggle dataset
+- data/processed/ - model outputs, dashboard-ready files
+- assets/ - dashboard screenshot
 - requirements.txt
 
 ## How to run
@@ -45,4 +45,10 @@ source venv/bin/activate
 pip install -r requirements.txt
 jupyter notebook
 
-Run notebooks in order: 01_eda.ipynb → 02_forecasting.ipynb →
+Run the notebooks in order: 01_eda.ipynb, then 02_forecasting.ipynb, then 03_safety_stock.ipynb, then 04_dashboard_export.ipynb
+
+## Data source
+Kaggle: Store Item Demand Forecasting Challenge - https://www.kaggle.com/competitions/demand-forecasting-kernels-only
+
+## Notes
+The current stock numbers in the reorder-status dashboard are simulated for the demo since there's no live inventory feed. The reorder points and safety stock themselves come straight from real historical demand.
