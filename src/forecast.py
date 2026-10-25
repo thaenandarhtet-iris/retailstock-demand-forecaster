@@ -70,7 +70,7 @@ def run(limit: int | None = None, n_jobs: int = -1) -> tuple[pd.DataFrame, pd.Da
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument("--limit", type=int, help="only forecast the first N SKUs")
-    args, _ = parser.parse_known_args()
+    args = parser.parse_args()
 
     results, metrics = run(args.limit)
     PROCESSED.mkdir(parents=True, exist_ok=True)
