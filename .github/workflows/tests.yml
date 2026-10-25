@@ -21,3 +21,27 @@ jobs:
 
       - name: Run tests
         run: pytest -v
+
+  dbt:
+    runs-on: ubuntu-latest
+    env:
+      DBT_DUCKDB_PATH: ${{ github.workspace }}/ci.duckdb
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install dependencies
+        run: pip install pandas duckdb "dbt-core>=1.9,<2" "dbt-duckdb>=1.9,<2"
+
+      - name: Build a warehouse from the test fixtures
+        run: >
+          python -c "from pathlib import Path; from warehouse.load import load_all;
+          load_all(db=Path('$DBT_DUCKDB_PATH'), landing=Path('tests/fixtures/landing'), m5_dir=Path('tests/fixtures/m5'))"
+
+      - name: dbt build
+        working-directory: dbt
+        run: dbt deps --profiles-dir . && dbt build --profiles-dir .

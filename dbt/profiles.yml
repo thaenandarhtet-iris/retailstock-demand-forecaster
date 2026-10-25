@@ -1,0 +1,15 @@
+# No secrets here: DuckDB is a local file, and BigQuery uses application-default credentials.
+retailstock:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: "{{ env_var('DBT_DUCKDB_PATH', '../warehouse/retailstock.duckdb') }}"
+      schema: main
+    bq:
+      type: bigquery
+      method: oauth
+      project: "{{ env_var('GCP_PROJECT') }}"
+      dataset: "{{ env_var('BQ_DATASET', 'retailstock') }}"
+      location: US
+      threads: 4

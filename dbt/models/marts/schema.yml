@@ -1,0 +1,46 @@
+version: 2
+
+models:
+  - name: stg_scraped_prices
+    columns:
+      - name: source
+        tests:
+          - accepted_values:
+              arguments:
+                values: ["webscraper_io", "open_prices"]
+      - name: price
+        tests: [not_null]
+
+  - name: fct_daily_sku
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [item_id, date]
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "sell_price > 0"
+    columns:
+      - name: item_id
+        tests: [not_null]
+      - name: units
+        tests: [not_null]
+
+  - name: dim_sku
+    columns:
+      - name: item_id
+        tests: [unique, not_null]
+
+  - name: mart_competitor_price_index
+    tests:
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "price_index > 0"
+      - dbt_utils.expression_is_true:
+          arguments:
+            expression: "avg_depth is null or (avg_depth >= 0 and avg_depth < 0.9)"
+
+  - name: mart_scrape_health
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns: [run_date, source]
