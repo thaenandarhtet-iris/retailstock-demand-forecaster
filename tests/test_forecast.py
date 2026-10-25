@@ -21,3 +21,28 @@ def test_score_one_row_per_sku():
     assert metrics.loc[1, "wape"] == 0
     assert metrics.loc[1, "baseline_wape"] == 20
     assert metrics.loc[2, "baseline_wape"] == 0
+
+
+def _synthetic_sku(days=400):
+    import numpy as np
+    dates = pd.date_range("2015-01-01", periods=days)
+    rng = np.random.default_rng(1)
+    price = np.where((np.arange(days) // 7) % 6 == 0, 4.0, 5.0)
+    sales = 20 + 3 * (dates.dayofweek >= 5) + 6 * (price == 4.0) + rng.normal(0, 1, days)
+    return pd.DataFrame({"date": dates, "sales": sales, "sell_price": price, "is_promo": price == 4.0})
+
+
+def test_default_forecast_unchanged():
+    from src.forecast import forecast_sku
+    sku = _synthetic_sku()
+    default = forecast_sku(1, 1, sku[["date", "sales"]], holdout_days=28)
+    explicit = forecast_sku(1, 1, sku[["date", "sales"]], holdout_days=28, regressors=())
+    assert list(default.columns) == ["store", "item", "date", "actual", "prophet", "baseline"]
+    pd.testing.assert_frame_equal(default, explicit)
+
+
+def test_regressor_forecast_runs():
+    from src.forecast import forecast_sku
+    result = forecast_sku(1, 1, _synthetic_sku(), holdout_days=28, regressors=("sell_price", "is_promo"))
+    assert len(result) == 28
+    assert result.prophet.notna().all()

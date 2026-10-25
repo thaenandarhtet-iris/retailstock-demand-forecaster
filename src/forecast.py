@@ -24,15 +24,26 @@ def seasonal_naive(history: pd.Series, horizon: pd.DatetimeIndex) -> pd.Series:
     return pd.Series([by_weekday[d.dayofweek] for d in horizon], index=horizon, dtype=float)
 
 
-def forecast_sku(store: int, item: int, sku: pd.DataFrame, holdout_days: int = HOLDOUT_DAYS) -> pd.DataFrame:
-    """Fit Prophet on all but the last `holdout_days` and forecast them, alongside the baseline."""
+def forecast_sku(store: int, item: int, sku: pd.DataFrame, holdout_days: int = HOLDOUT_DAYS,
+                 regressors: tuple[str, ...] = ()) -> pd.DataFrame:
+    """
+    Fit Prophet on all but the last `holdout_days` and forecast them, alongside the baseline.
+
+    `regressors` names extra columns of `sku` (such as price and a promo flag). Their future values are taken
+    as known, the way a retailer knows its planned prices and promotions.
+    """
     logging.getLogger("cmdstanpy").disabled = True
-    series = sku.set_index("date")["sales"].sort_index()
+    frame = sku.set_index("date").sort_index()
+    series = frame["sales"]
     train, test = series.iloc[:-holdout_days], series.iloc[-holdout_days:]
+    extra = frame[list(regressors)].astype(float)
 
     model = Prophet(yearly_seasonality=True, weekly_seasonality=True, daily_seasonality=False)
-    model.fit(pd.DataFrame({"ds": train.index, "y": train.values}))
-    prophet = model.predict(pd.DataFrame({"ds": test.index}))["yhat"].clip(lower=0).to_numpy()
+    for name in regressors:
+        model.add_regressor(name)
+    model.fit(pd.DataFrame({"ds": train.index, "y": train.values, **extra.loc[train.index].to_dict("list")}))
+    future = pd.DataFrame({"ds": test.index, **extra.loc[test.index].to_dict("list")})
+    prophet = model.predict(future)["yhat"].clip(lower=0).to_numpy()
 
     return pd.DataFrame({
         "store": store,
