@@ -1,0 +1,2 @@
+run_date,source,rows,pages,parse_failures,null_prices,failure_rate,duration_s
+2026-10-25,_runs,2885.0,64.0,0.0,31.0,0.0,97.69999999999999
