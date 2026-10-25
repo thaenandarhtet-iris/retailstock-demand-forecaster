@@ -1,0 +1,36 @@
+name: daily scrape
+
+on:
+  schedule:
+    - cron: "0 13 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install scraper dependencies
+        run: pip install selenium requests
+
+      - name: Scrape the test store
+        run: python -m scrape.webscraper_io
+
+      - name: Pull Open Prices
+        run: python -m scrape.open_prices
+
+      - name: Commit today's data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add landing/raw
+          git commit -m "Daily scrape $(date -u +%F)" || exit 0
+          git push
