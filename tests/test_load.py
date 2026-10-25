@@ -50,3 +50,10 @@ def test_load_all_m5_subset(tmp_path):
     assert set(sales.item_id) == {"FOODS_3_001", "FOODS_3_002"}
     assert len(sales) == 2 * 21
     assert set(prices.store_id) == {"CA_1"} and set(prices.item_id) == {"FOODS_3_001", "FOODS_3_002"}
+
+
+def test_run_log_keeps_its_own_source_not_the_folder_name(tmp_path):
+    db = tmp_path / "w.duckdb"
+    load_all(db=db, landing=_landing(tmp_path / "landing"), m5_dir=M5_FIXTURES)
+    with duckdb.connect(str(db)) as con:
+        assert con.execute("select distinct source from raw.scrape_runs").fetchall() == [("webscraper_io",)]

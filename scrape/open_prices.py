@@ -9,7 +9,7 @@ from datetime import datetime, timedelta, timezone
 
 import requests
 
-from scrape.base import write_partition
+from scrape.base import run_and_log
 from scrape.parsers import parse_open_prices
 from src.config import USER_AGENT
 
@@ -32,11 +32,16 @@ def us_location_ids(session: requests.Session) -> list[int]:
 
 
 def scrape(session: requests.Session, scraped_at: str, since: str) -> tuple[list[dict], dict]:
-    records, pages, dropped = [], 0, 0
+    records, pages, dropped, failures = [], 0, 0, 0
     for location_id in us_location_ids(session):
         page = 1
         while True:
-            payload = _get(session, "prices", location_id=location_id, size=100, order_by="-date", page=page)
+            try:
+                payload = _get(session, "prices", location_id=location_id, size=100, order_by="-date", page=page)
+            except requests.RequestException:
+                # One store's API error costs that store, not the whole run.
+                failures += 1
+                break
             pages += 1
             batch, n_dropped = parse_open_prices(payload, scraped_at)
             records += [r for r in batch if r["observed_on"] >= since]
@@ -45,20 +50,19 @@ def scrape(session: requests.Session, scraped_at: str, since: str) -> tuple[list
             if page >= payload.get("pages", 1) or oldest < since:
                 break
             page += 1
-    return records, {"pages": pages, "parse_failures": 0, "null_prices": dropped}
+    return records, {"pages": pages, "parse_failures": failures, "null_prices": dropped}
 
 
 def main():
-    started = datetime.now(timezone.utc)
-    scraped_at = started.strftime("%Y-%m-%dT%H:%M:%SZ")
-    since = (started - timedelta(days=LOOKBACK_DAYS)).date().isoformat()
-    with requests.Session() as session:
-        session.headers["User-Agent"] = USER_AGENT
-        records, stats = scrape(session, scraped_at, since)
-    run = {"source": "open_prices", "started_at": scraped_at, **stats, "rows": len(records),
-           "duration_s": round((datetime.now(timezone.utc) - started).total_seconds(), 1)}
-    path = write_partition("open_prices", records, run, started.date())
-    print(f"open_prices: {len(records)} US prices since {since} from {stats['pages']} pages -> {path}")
+    def scrape_once():
+        started = datetime.now(timezone.utc)
+        since = (started - timedelta(days=LOOKBACK_DAYS)).date().isoformat()
+        with requests.Session() as session:
+            session.headers["User-Agent"] = USER_AGENT
+            return scrape(session, started.strftime("%Y-%m-%dT%H:%M:%SZ"), since)
+
+    path = run_and_log("open_prices", scrape_once)
+    print(f"open_prices: wrote {path}")
 
 
 if __name__ == "__main__":

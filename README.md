@@ -71,16 +71,16 @@ From M5 I use one store (`CA_1`) and one department (`FOODS_3`), and within that
 
 ### Results
 
-**Promotions.** 236 promotions in the 200 items had a clean four weeks before and two weeks after to compare against. The typical one took 17% off the price.
+**Promotions.** 234 promotions in the 200 items had a clean four weeks before and two weeks after to compare against. The typical one took 17% off the price.
 
 To measure lift fairly, each promoted item is compared with items in the same department that weren't on promotion at the same time (difference-in-differences). Otherwise a promo that happened to run over a holiday would get credit for the holiday.
 
 | | Result |
 |---|---|
-| Median sales lift during the promo | **+59%** |
+| Median sales lift during the promo | **+58%** |
 | Median change in the two weeks after | +1.3 units/day (no stock-up dip) |
 | Promotions that made money at a 30% margin | **52%** |
-| ...at a 25% margin / at a 35% margin | 44% / 61% |
+| ...at a 25% margin / at a 35% margin | 43% / 61% |
 
 **About half the promotions lost money,** even though almost all of them lifted sales. The discount on units that would have sold anyway often cost more than the extra sales brought in. M5 has no cost data, so profit assumes a 30% gross margin, and the 25% and 35% rows show how much the answer depends on that. I expected shoppers to stock up and buy less afterwards, but in this data sales after a promo were usually a little *higher*, so there was no dip to subtract.
 

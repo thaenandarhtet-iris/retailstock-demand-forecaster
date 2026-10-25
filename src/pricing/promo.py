@@ -63,7 +63,8 @@ def did(weekly: pd.DataFrame, flagged: pd.DataFrame, event: pd.Series) -> dict |
     span = np.concatenate(list(windows.values()))
 
     promo_flags = flagged[flagged.wm_yr_wk.isin(span)].pivot(index="item_id", columns="wm_yr_wk", values="is_promo")
-    if promo_flags.loc[event.item_id, windows["pre"]].any():
+    treated_flags = promo_flags.loc[event.item_id]
+    if treated_flags.isna().any() or treated_flags[windows["pre"]].astype(bool).any():
         return None
     complete = promo_flags.notna().all(axis=1)
     controls = promo_flags.index[complete & ~promo_flags.fillna(True).any(axis=1)]

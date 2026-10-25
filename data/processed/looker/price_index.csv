@@ -1,26 +1,28 @@
 store,store_name,category,n_products,price_index,promo_share,avg_depth
-4393,Sprouts Farmers Market Sunnyvale,en:dark-chocolates,1,110.0,0.0,
-3998,Safeway Mountain View,unknown,1,104.4,1.0,0.07698229407236334
-4393,Sprouts Farmers Market Sunnyvale,en:honeys,3,90.9,1.0,0.08846215239016035
+4058,Whole Foods Market Los Altos,en:honeys,3,110.3,0.3333333333333333,0.2347959969207083
+4058,Whole Foods Market Los Altos,en:ice-cream-tubs,1,125.3,0.0,
+4393,Sprouts Farmers Market Sunnyvale,en:teas,1,94.3,1.0,
+3998,Safeway Mountain View,en:instant-coffees,2,109.7,0.0,
 4190,Smart & Final extra! Mountain View,en:frozen-desserts,1,74.7,1.0,0.2004008016032064
 4058,Whole Foods Market Los Altos,en:ice-creams,1,125.3,0.0,
 4058,Whole Foods Market Los Altos,en:frozen-desserts,1,125.3,0.0,
 4190,Smart & Final extra! Mountain View,en:ice-creams,1,74.7,1.0,0.2004008016032064
-3998,Safeway Mountain View,en:Hot honey,1,96.8,1.0,0.07698229407236334
-4393,Sprouts Farmers Market Sunnyvale,en:coffees,1,100.0,1.0,0.17398869073510226
-4058,Whole Foods Market Los Altos,en:Hot honey,1,103.2,0.0,
-4393,Sprouts Farmers Market Sunnyvale,unknown,1,106.3,1.0,0.045475216007276
-4058,Whole Foods Market Los Altos,en:groceries,1,100.0,0.0,
-4190,Smart & Final extra! Mountain View,en:ice-cream-tubs,1,74.7,1.0,0.2004008016032064
+3998,Safeway Mountain View,en:Hot honey,1,93.7,1.0,0.07698229407236334
+4058,Whole Foods Market Los Altos,en:Hot honey,1,100.0,0.0,
+4190,Smart & Final extra! Mountain View,en:instant-coffees,2,90.3,0.0,
+4117,Whole Foods Market Sunnyvale,en:teas,1,105.7,1.0,0.3003754693366709
+4393,Sprouts Farmers Market Sunnyvale,en:coffees,1,105.6,1.0,0.17398869073510226
+3998,Safeway Mountain View,unknown,2,96.6,1.0,0.17491679505800972
+4117,Whole Foods Market Sunnyvale,en:squeezed-lemon-juices,1,104.4,0.0,
+4393,Sprouts Farmers Market Sunnyvale,en:Hot honey,1,117.2,0.0,
 4393,Sprouts Farmers Market Sunnyvale,en:frozen-desserts,1,91.6,1.0,0.3337041156840934
-3998,Safeway Mountain View,en:coffees,1,89.5,1.0,0.05558643690939413
+3998,Safeway Mountain View,en:coffees,1,94.4,1.0,0.05558643690939413
 4058,Whole Foods Market Los Altos,en:dark-chocolate-bar,1,100.0,0.0,
-4058,Whole Foods Market Los Altos,unknown,2,94.7,0.0,
-3998,Safeway Mountain View,en:honeys,3,100.0,1.0,0.08340283569641371
-4117,Whole Foods Market Sunnyvale,en:dark-chocolate-bar,1,100.0,0.0,
+4058,Whole Foods Market Los Altos,unknown,3,93.7,0.3333333333333333,0.2356358941252421
+4393,Sprouts Farmers Market Sunnyvale,en:honeys,4,94.8,1.0,0.08421652136910346
 4117,Whole Foods Market Sunnyvale,en:frozen-desserts,1,108.4,1.0,0.11264080100125162
-4058,Whole Foods Market Los Altos,en:honeys,3,110.3,0.0,
-4117,Whole Foods Market Sunnyvale,en:coffees,1,105.3,0.0,
-4058,Whole Foods Market Los Altos,en:ice-cream-tubs,1,125.3,0.0,
-4058,Whole Foods Market Los Altos,en:dark-chocolates,1,90.0,1.0,0.18214936247723135
-4117,Whole Foods Market Sunnyvale,en:groceries,1,100.0,0.0,
+4393,Sprouts Farmers Market Sunnyvale,unknown,3,111.1,1.0,0.09035650263988844
+4190,Smart & Final extra! Mountain View,en:ice-cream-tubs,1,74.7,1.0,0.2004008016032064
+3998,Safeway Mountain View,en:squeezed-lemon-juices,1,95.6,0.0,
+3998,Safeway Mountain View,en:honeys,1,100.0,1.0,0.08340283569641371
+4117,Whole Foods Market Sunnyvale,en:dark-chocolate-bar,1,100.0,0.0,

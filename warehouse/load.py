@@ -18,7 +18,7 @@ PRICE_COLUMNS = {
 }
 RUN_COLUMNS = {
     "source": "VARCHAR", "started_at": "TIMESTAMP", "pages": "INTEGER", "rows": "INTEGER",
-    "parse_failures": "INTEGER", "null_prices": "INTEGER", "duration_s": "DOUBLE",
+    "parse_failures": "INTEGER", "null_prices": "INTEGER", "duration_s": "DOUBLE", "error": "VARCHAR",
 }
 
 
@@ -33,7 +33,7 @@ def _load_jsonl(con, table: str, files: list[Path], columns: dict[str, str]):
     if files:
         paths = ", ".join(f"'{f}'" for f in files)
         con.sql(f"create or replace table raw.{table} as select * from read_json([{paths}], "
-                f"columns={columns}, format='newline_delimited')")
+                f"columns={columns}, format='newline_delimited', hive_partitioning=false)")
     else:
         con.sql(f"create or replace table raw.{table} ({', '.join(f'{c} {t}' for c, t in columns.items())})")
 

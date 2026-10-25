@@ -1,1 +1,2 @@
 {"source": "open_prices", "started_at": "2026-10-25T17:01:07Z", "pages": 38, "parse_failures": 0, "null_prices": 31, "rows": 2738, "duration_s": 57.8}
+{"source": "open_prices", "started_at": "2026-10-25T17:20:41Z", "null_prices": 26, "pages": 38, "parse_failures": 0, "rows": 2743, "duration_s": 56.0}

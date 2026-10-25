@@ -8,6 +8,11 @@ on:
 permissions:
   contents: write
 
+# Two runs at once (the schedule plus a manual run) would race to push.
+concurrency:
+  group: daily-scrape
+  cancel-in-progress: false
+
 jobs:
   scrape:
     runs-on: ubuntu-latest
@@ -18,13 +23,17 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Only the scraper libraries: the scrapers import src.config, which is plain constants.
       - name: Install scraper dependencies
         run: pip install selenium requests
 
+      # One scraper failing shouldn't stop the other; its failure is still in the run log.
       - name: Scrape the test store
+        continue-on-error: true
         run: python -m scrape.webscraper_io
 
       - name: Pull Open Prices
+        continue-on-error: true
         run: python -m scrape.open_prices
 
       - name: Commit today's data
@@ -33,4 +42,5 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add landing/raw
           git commit -m "Daily scrape $(date -u +%F)" || exit 0
+          git pull --rebase
           git push

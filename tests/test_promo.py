@@ -77,3 +77,10 @@ def test_zero_pre_sales_gives_nan_lift():
 def test_promo_profit_by_hand():
     event = {"regular_price": 10.0, "promo_price": 8.0, "promo_units": 140, "baseline_units": 100, "dip_units": -10}
     assert promo_profit(event, margin=0.30) == pytest.approx(1 * 140 - 3 * 100 + 3 * -10)
+
+
+def test_did_skips_item_launched_inside_pre_window():
+    weekly, flagged = _panel(treated_effect=4.0, post_effect=0.0)
+    late = weekly.item_id.eq("FOODS_3_000") & weekly.wm_yr_wk.lt(11105)
+    weekly, flagged = weekly[~late], flagged[~(flagged.item_id.eq("FOODS_3_000") & flagged.wm_yr_wk.lt(11105))]
+    assert did(weekly, flagged, promo_events(flagged).iloc[0]) is None
