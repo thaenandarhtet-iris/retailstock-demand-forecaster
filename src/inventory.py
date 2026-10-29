@@ -17,6 +17,15 @@ def safety_stock(daily_std: float, lead_time_days: int = LEAD_TIME_DAYS, service
     return float(norm.ppf(service_level) * daily_std * np.sqrt(lead_time_days))
 
 
+def promo_reorder_point(base_lead_demand: float, beta: float, promo_coef: float, depth: float, error_std: float) -> float:
+    """
+    Reorder point ahead of a planned promotion: lead-time demand scaled by the price effect (elasticity) and the
+    extra lift from the promo itself, plus safety stock from the price-aware forecast's errors.
+    """
+    multiplier = (1 - depth) ** beta * np.exp(promo_coef)
+    return float(base_lead_demand * multiplier + safety_stock(error_std))
+
+
 def lead_time_windows(values: np.ndarray, lead_time_days: int = LEAD_TIME_DAYS) -> np.ndarray:
     """Sum of every consecutive `lead_time_days` window."""
     return np.convolve(values, np.ones(lead_time_days), mode="valid")

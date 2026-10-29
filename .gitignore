@@ -14,3 +14,11 @@ data/raw/
 
 # macOS
 .DS_Store
+
+# 2.0 warehouse and dbt
+landing/raw/m5/
+warehouse/*.duckdb
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+dbt/.user.yml

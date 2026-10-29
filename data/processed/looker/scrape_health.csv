@@ -1,0 +1,3 @@
+run_date,source,rows,pages,parse_failures,null_prices,failure_rate,duration_s
+2026-10-25,webscraper_io,147.0,26.0,0.0,0.0,0.0,40.9
+2026-10-25,open_prices,2743.0,38.0,0.0,26.0,0.0,56.0

@@ -1,0 +1,537 @@
+{
+ "items": [
+  {
+   "id": 137593,
+   "product_code": "0039978113139",
+   "price": 4.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T01:35:17.652790Z",
+   "product": {
+    "code": "0039978113139",
+    "product_name": "Organic Dark Rye Flour",
+    "categories_tags": [
+     "en:plant-based-foods-and-beverages",
+     "en:plant-based-foods",
+     "en:cereals-and-potatoes",
+     "en:cereals-and-their-products",
+     "en:flours"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137594,
+   "product_code": "0039978113221",
+   "price": null,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T01:35:18.404612Z",
+   "product": {
+    "code": "0039978113221",
+    "product_name": "Gluten flour",
+    "categories_tags": [
+     "en:plant-based-foods-and-beverages",
+     "en:plant-based-foods",
+     "en:cereals-and-potatoes",
+     "en:cereals-and-their-products"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137595,
+   "product_code": "0039978024527",
+   "price": 6.79,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T01:35:19.173101Z",
+   "product": {
+    "code": "0039978024527",
+    "product_name": "Gluten Free All-Purpose Baking Flour",
+    "categories_tags": [
+     "en:plant-based-foods-and-beverages",
+     "en:plant-based-foods",
+     "en:legumes-and-their-products",
+     "en:cereals-and-potatoes",
+     "en:seeds",
+     "en:cereals-and-their-products",
+     "en:flours",
+     "en:cereal-grains",
+     "en:legume-flours",
+     "en:chickpea-flours",
+     "en:fresh-broad-flours",
+     "en:sorghum"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "FR"
+   }
+  },
+  {
+   "id": 137596,
+   "product_code": "0039978113771",
+   "price": 7.49,
+   "currency": "EUR",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T01:35:19.937168Z",
+   "product": {
+    "code": "0039978113771",
+    "product_name": "Gluten Free Oat Flour",
+    "categories_tags": [
+     "en:plant-based-foods-and-beverages",
+     "en:plant-based-foods",
+     "en:cereals-and-potatoes",
+     "en:cereals-and-their-products",
+     "en:flours",
+     "en:specific-products",
+     "en:cereal-flours",
+     "en:products-for-specific-diets",
+     "en:products-without-gluten",
+     "en:oat-flours"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137597,
+   "product_code": "0810291007660",
+   "price": 5.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": true,
+   "price_without_discount": 6.99,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.279619Z",
+   "product": {
+    "code": "0810291007660",
+    "product_name": "Tate's Bake Shop Cookies",
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137598,
+   "product_code": "0810291001095",
+   "price": 5.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": true,
+   "price_without_discount": 6.99,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.276369Z",
+   "product": {
+    "code": "0810291001095",
+    "product_name": "Gluten Free Ginger Zinger Cookies",
+    "categories_tags": [
+     "en:snacks",
+     "en:sweet-snacks",
+     "en:biscuits-and-cakes",
+     "en:biscuits"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137599,
+   "product_code": "0014100099970",
+   "price": 6.49,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.289006Z",
+   "product": {
+    "code": "0014100099970",
+    "product_name": "Milano Milk Chocolate",
+    "categories_tags": [
+     "en:snacks",
+     "en:sweet-snacks",
+     "en:biscuits-and-cakes",
+     "en:biscuits-and-crackers",
+     "en:biscuits",
+     "en:chocolate-biscuits"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137600,
+   "product_code": "9310072028194",
+   "price": 3.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": true,
+   "price_without_discount": 5.99,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.293808Z",
+   "product": {
+    "code": "9310072028194",
+    "product_name": "Arnott's Tim Tam Chewy Caramel Cookies",
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137601,
+   "product_code": "0694990012503",
+   "price": 4.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.345785Z",
+   "product": {
+    "code": "0694990012503",
+    "product_name": "Petit \u00c9colier dark chocolate 45% COCOA",
+    "categories_tags": [
+     "en:snacks",
+     "en:sweet-snacks",
+     "en:biscuits-and-cakes",
+     "en:biscuits-and-crackers",
+     "en:biscuits",
+     "en:chocolate-biscuits",
+     "en:petit-beurre",
+     "en:biscuit-with-a-chocolate-bar-covering",
+     "en:butter-biscuit-with-chocolate"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137602,
+   "product_code": "0810291001002",
+   "price": 6.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.347939Z",
+   "product": {
+    "code": "0810291001002",
+    "product_name": "Chocolate Chip Cookies",
+    "categories_tags": [
+     "en:snacks",
+     "en:sweet-snacks",
+     "en:biscuits-and-cakes",
+     "en:biscuits-and-crackers",
+     "en:biscuits"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137603,
+   "product_code": "0810291008940",
+   "price": 6.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.355855Z",
+   "product": {
+    "code": "0810291008940",
+    "product_name": "Soft Baked Chocolate Chip Cookies",
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137604,
+   "product_code": "0810291008964",
+   "price": 5.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": true,
+   "price_without_discount": 6.99,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.365205Z",
+   "product": {
+    "code": "0810291008964",
+    "product_name": "Soft Baked Dark Chocolate Chunk Cookies",
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137605,
+   "product_code": "0810291002986",
+   "price": 5.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": true,
+   "price_without_discount": 6.99,
+   "location_id": 3998,
+   "created": "2025-09-13T02:00:15.411820Z",
+   "product": {
+    "code": "0810291002986",
+    "product_name": "Gluten free lemon cookies",
+    "categories_tags": [
+     "en:snacks",
+     "en:sweet-snacks",
+     "en:biscuits-and-cakes",
+     "en:biscuits-and-crackers",
+     "en:biscuits"
+    ]
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137628,
+   "product_code": "0083783160000",
+   "price": 22.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.528954Z",
+   "product": {
+    "code": "0083783160000",
+    "product_name": null,
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137629,
+   "product_code": "0083783228229",
+   "price": 13.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.535892Z",
+   "product": {
+    "code": "0083783228229",
+    "product_name": "Celebration Fresh Hop IPA 6.8% ABV",
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137630,
+   "product_code": "0083783535426",
+   "price": 13.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.537251Z",
+   "product": {
+    "code": "0083783535426",
+    "product_name": null,
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137631,
+   "product_code": "0083783228625",
+   "price": 13.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.536444Z",
+   "product": {
+    "code": "0083783228625",
+    "product_name": null,
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137632,
+   "product_code": "0723830106123",
+   "price": 22.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.593116Z",
+   "product": {
+    "code": "0723830106123",
+    "product_name": null,
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137633,
+   "product_code": "0083783381023",
+   "price": 22.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.602395Z",
+   "product": {
+    "code": "0083783381023",
+    "product_name": null,
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  },
+  {
+   "id": 137634,
+   "product_code": "0083783228120",
+   "price": 22.99,
+   "currency": "USD",
+   "date": "2025-09-12",
+   "price_is_discounted": false,
+   "price_without_discount": null,
+   "location_id": 3998,
+   "created": "2025-09-13T04:55:21.604402Z",
+   "product": {
+    "code": "0083783228120",
+    "product_name": null,
+    "categories_tags": []
+   },
+   "location": {
+    "id": 3998,
+    "osm_name": "Safeway",
+    "osm_brand": "Safeway",
+    "osm_address_city": "Mountain View",
+    "osm_address_country_code": "US"
+   }
+  }
+ ],
+ "total": 20,
+ "page": 1,
+ "pages": 1,
+ "size": 20
+}
