@@ -1,1 +1,2 @@
 {"source": "open_prices", "started_at": "2026-11-24T00:40:56Z", "null_prices": 6, "pages": 32, "parse_failures": 0, "rows": 2081, "duration_s": 45.1}
+{"source": "open_prices", "started_at": "2026-11-24T22:58:09Z", "pages": 0, "rows": 0, "parse_failures": 1, "null_prices": 0, "duration_s": 31.8, "error": "ReadTimeout(ReadTimeoutError(\"HTTPSConnectionPool(host='prices.openfoodfacts.org', port=443): Read timed out. (read timeout=30)\"))"}
